@@ -9,7 +9,7 @@ object:
     description: 
   fields:
   - password:
-      value: v2:{yBzdXEq8H4KZZR+nEnt+NQ==}
+      value: v2:{PTltkLJ19Mq/c6VJuEYH5w==}
   - network:
       value: 192.168.1.0/24
   - dns_domain:

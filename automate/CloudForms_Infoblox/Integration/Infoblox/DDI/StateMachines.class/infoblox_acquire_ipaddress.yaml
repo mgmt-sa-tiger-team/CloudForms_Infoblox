@@ -9,6 +9,6 @@ object:
     description: 
   fields:
   - password:
-      value: v2:{yBzdXEq8H4KZZR+nEnt+NQ==}
+      value: v2:{PTltkLJ19Mq/c6VJuEYH5w==}
   - step2:
       value: METHOD::infoblox_acquire_ipaddress

@@ -223,6 +223,12 @@ def set_task_options(nic_index, hostname, fqdn, dns_servers, infoblox_network)
 end
 
 begin
+  
+  unless $evm.object["dialog_infoblox_enabled"] = "true"
+    $evm.log(:info, "Exiting infoblox_acquire_ipaddress - not provisioned from dialog")
+    exit MIQ_OK
+  end
+      
   case $evm.root['vmdb_object_type']
   when 'vm'
     @task   = $evm.root['vm'].miq_provision
@@ -261,7 +267,7 @@ begin
     body_hash = {}
     body_hash[:comment]           = "CloudForms request_id: #{@task.miq_request.id} nic: #{nic_index}"
     body_hash[:name]              = fqdn
-    body_hash[:configure_for_dns] = false
+    body_hash[:configure_for_dns] = true
     body_hash[:ipv4addrs]         = []
 
     ipv4addr = {}
@@ -299,10 +305,14 @@ begin
     adapter_settings = {
       :network => get_network_vlan(nic_options, infoblox_network_hash),
       :devicetype => get_network_devicetype(nic_index, nic_options),
-      :mac_address => ipv4addr[:mac]
+      :mac_address => ipv4addr[:mac],
+      :is_dvs => true
     }
-    log_and_update_message(:info, "VM: #{hostname} nic: #{nic_index} adapter_settings: #{adapter_settings}")
-    set_task_network_adapter_settings(nic_index, adapter_settings)
+    dvs = $evm.object['distributed_virtual_switch']
+    portgroup = $evm.object['distributed_port_group']
+    @task.set_dvs("#{portgroup}")
+    @task.set_network_adapter(nic_index, adapter_settings)
+    log_and_update_message(:info, "VM: #{hostname} nic: #{nic_index} nic_settings: #{nic_settings} adapter_settings: #{adapter_settings}")
 
     # build task options
     dns_servers = get_dns_servers(nic_index, nic_options)

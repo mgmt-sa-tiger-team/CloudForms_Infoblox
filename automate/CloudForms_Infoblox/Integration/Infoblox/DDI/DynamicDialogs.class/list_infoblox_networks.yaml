@@ -8,5 +8,9 @@ object:
     inherits: 
     description: 
   fields:
+  - password:
+      value: v2:{PTltkLJ19Mq/c6VJuEYH5w==}
+  - networks:
+      value: 10.17.0.0/20
   - method2:
       value: list_infoblox_networks

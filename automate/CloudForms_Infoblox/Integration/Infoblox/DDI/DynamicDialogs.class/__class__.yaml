@@ -18,7 +18,7 @@ object:
       datatype: string
       priority: 1
       owner: 
-      default_value: infoblox.example.com
+      default_value: infoblox.ofi.com
       substitute: true
       message: create
       visibility: 
@@ -38,7 +38,7 @@ object:
       datatype: string
       priority: 2
       owner: 
-      default_value: admin
+      default_value: svdchefiblx
       substitute: true
       message: create
       visibility: 
@@ -54,11 +54,11 @@ object:
   - field:
       aetype: attribute
       name: password
-      display_name: 
+      display_name: ''
       datatype: password
       priority: 3
       owner: 
-      default_value: v2:{FZcqjrbHDDiSiMfVAY1r2A==}
+      default_value: v2:{PTltkLJ19Mq/c6VJuEYH5w==}
       substitute: true
       message: create
       visibility: 

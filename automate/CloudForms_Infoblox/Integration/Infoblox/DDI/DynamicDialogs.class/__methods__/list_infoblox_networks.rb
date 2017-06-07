@@ -33,7 +33,9 @@ def call_infoblox(action, ref='network', body_hash=nil)
     password    = nil || $evm.object.decrypt('password')
     api_version = nil || $evm.object['api_version']
     url = "https://#{servername}/wapi/v#{api_version}/"+"#{ref}"
-
+    
+    $evm.log(:info, "DEBUG: #{username} - #{password}")
+    
     params = {
       :method=>action, :url=>url, :verify_ssl=>false,
       :headers=>{ :content_type=>:json, :accept=>:json,

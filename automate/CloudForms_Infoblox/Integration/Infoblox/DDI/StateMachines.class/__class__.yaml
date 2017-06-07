@@ -18,7 +18,7 @@ object:
       datatype: string
       priority: 1
       owner: 
-      default_value: infoblox.example.com
+      default_value: infoblox.ofi.com
       substitute: true
       message: create
       visibility: 
@@ -38,7 +38,7 @@ object:
       datatype: string
       priority: 2
       owner: 
-      default_value: admin
+      default_value: svdchefiblx
       substitute: true
       message: create
       visibility: 
@@ -54,11 +54,11 @@ object:
   - field:
       aetype: attribute
       name: password
-      display_name: 
+      display_name: ''
       datatype: password
       priority: 3
       owner: 
-      default_value: v2:{Zp93GtjLQqtkD5Ix/cJ4dQ==}
+      default_value: v2:{PTltkLJ19Mq/c6VJuEYH5w==}
       substitute: true
       message: create
       visibility: 
@@ -138,7 +138,7 @@ object:
       datatype: string
       priority: 7
       owner: 
-      default_value: 
+      default_value: den.ofi.com
       substitute: true
       message: create
       visibility: 
@@ -198,7 +198,7 @@ object:
       datatype: string
       priority: 10
       owner: 
-      default_value: 
+      default_value: 10.17.0.63
       substitute: true
       message: create
       visibility: 
@@ -253,12 +253,52 @@ object:
       max_time: 
   - field:
       aetype: attribute
-      name: vlan
+      name: distributed_virtual_switch
       display_name: 
       datatype: string
       priority: 13
       owner: 
-      default_value: 
+      default_value: dvS03_NX_Clusters
+      substitute: true
+      message: create
+      visibility: 
+      collect: 
+      scope: 
+      description: 
+      condition: 
+      on_entry: 
+      on_exit: 
+      on_error: 
+      max_retries: 
+      max_time: 
+  - field:
+      aetype: attribute
+      name: distributed_port_group
+      display_name: 
+      datatype: string
+      priority: 14
+      owner: 
+      default_value: dvP_NX_Non-Prod_2000
+      substitute: true
+      message: create
+      visibility: 
+      collect: 
+      scope: 
+      description: 
+      condition: 
+      on_entry: 
+      on_exit: 
+      on_error: 
+      max_retries: 
+      max_time: 
+  - field:
+      aetype: attribute
+      name: vlan
+      display_name: 
+      datatype: string
+      priority: 15
+      owner: 
+      default_value: dvP_NX_Non-Prod_2000
       substitute: true
       message: create
       visibility: 
@@ -276,7 +316,7 @@ object:
       name: rel1
       display_name: 
       datatype: string
-      priority: 14
+      priority: 16
       owner: 
       default_value: 
       substitute: true
@@ -296,7 +336,7 @@ object:
       name: step1
       display_name: 
       datatype: string
-      priority: 15
+      priority: 17
       owner: 
       default_value: 
       substitute: true
@@ -316,7 +356,7 @@ object:
       name: step2
       display_name: 
       datatype: string
-      priority: 16
+      priority: 18
       owner: 
       default_value: 
       substitute: true
@@ -336,7 +376,7 @@ object:
       name: step3
       display_name: 
       datatype: string
-      priority: 17
+      priority: 19
       owner: 
       default_value: 
       substitute: true
@@ -356,7 +396,7 @@ object:
       name: step4
       display_name: 
       datatype: string
-      priority: 18
+      priority: 20
       owner: 
       default_value: 
       substitute: true
@@ -376,7 +416,7 @@ object:
       name: step5
       display_name: 
       datatype: string
-      priority: 19
+      priority: 21
       owner: 
       default_value: 
       substitute: true
