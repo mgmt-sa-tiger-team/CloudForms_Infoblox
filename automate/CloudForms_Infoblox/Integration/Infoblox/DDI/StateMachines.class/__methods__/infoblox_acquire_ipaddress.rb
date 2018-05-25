@@ -192,7 +192,7 @@ def get_network_devicetype(nic_index, nic_options)
 end
 
 def get_network_vlan(nic_index, nic_options)
-  vlan = $evm.object['vlan'] || nic_options[:vlan] ||
+  vlan = $evm.object['vlan'] || nic_options[:vlan]
     log_and_update_message(:info, "nic_index: #{nic_index} vlan: #{vlan}")
     return vlan
 end
